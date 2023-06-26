@@ -1,4 +1,4 @@
 # office-calculator
-**live preview:** *[to follow]*  
+**live preview:** https://jgmejilla.github.io/office-calculator
 **my cat:**
 ![blorange](images/blorange.png)
