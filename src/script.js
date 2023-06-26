@@ -106,6 +106,8 @@ function evaluate(lst) {
             }
         }
     }
+
+    value = Math.round(value * 1000) / 1000
     return `${value}`;
 }
 //console.log(evaluate(sample_input));
