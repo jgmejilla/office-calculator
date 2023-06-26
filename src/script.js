@@ -6,20 +6,37 @@ buttons.forEach((button) => {
 });
 
 
+
+
+
 // math part
 
 let current_string = ""
-
+let answer = ''
 // updates current strings
 function update(e) {
+    if (current_string == 'uwu' || current_string == 'NaN') {
+        current_string = ''
+    }
+    result_div = document.querySelector('.result');
+    expression_div = document.querySelector('.expression');
+
     pressed = e.target.id;
     if (!isNaN(pressed)) {
         current_string += pressed
     } else if (pressed == 'clear') {
         current_string = ""
+        answer = ''
+        result.textContent = answer
+
     } else if (pressed == 'equals') {
-        answer = evaluate(convert(current_string))
-        current_string = `${answer}`
+        answer = `${evaluate(convert(current_string))}`
+        current_string = answer
+        result_div = document.querySelector('.result');
+        result_div.removeChild(result_div.lastChild)
+        result = document.createElement('h1')
+        result.textContent = answer
+        result_div.appendChild(result)
     } else if (pressed == 'decimal') {
         current_string += '.'
     } else if (pressed == 'add') {
@@ -33,6 +50,14 @@ function update(e) {
     } else if (pressed == 'delete') {
         current_string = current_string.slice(0, -1)
     }
+
+
+    expression_div.removeChild(expression_div.lastChild);
+    expression = document.createElement('p')
+    expression.textContent = `${current_string}`
+    expression_div.appendChild(expression);
+
+
     console.log(current_string)
 }
 
@@ -53,7 +78,6 @@ function convert(str) {
     current_arr.push(current_str)
     return current_arr
 }
-
 
 // evaluates function
     // const sample_input = ["2", "+", "2", "+", "2", "*", "2", "-", "6", "/", "0"];
