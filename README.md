@@ -1,2 +1,2 @@
 # office-calculator
-![blorange](src/blorange.png)
+![blorange](images/blorange.png)
