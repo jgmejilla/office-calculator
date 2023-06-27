@@ -1,10 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Inconsolata', monospace;
 }
 
 body {
-    
     background: rgb(248, 248, 248);
 
     overflow: hidden;
@@ -44,10 +44,24 @@ body {
     
 
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
+a {
+    color:rgb(50, 52, 60);
+}
+
+a:hover {
+    color: rgb(225, 65, 175);
+}
+
+
+img {
+    height: 12px;
+    width: 12px;
+}
 
 #calculator {
     height: 35rem;
