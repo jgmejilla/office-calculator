@@ -82,13 +82,13 @@ function convert(str) {
 // evaluates function
     // const sample_input = ["2", "+", "2", "+", "2", "*", "2", "-", "6", "/", "0"];
 function evaluate(lst) {
-    let value = parseInt(lst[0]);
 
+    let value = parseFloat(lst[0]);
     for (let i = 1; i < lst.length; i++) {
         if (i % 2) {
             operation = lst[i];
         } else {
-            let current = parseInt(lst[i])
+            let current = parseFloat(lst[i])
             switch (operation) {
                 case '+':
                     value = value + current;
@@ -107,9 +107,6 @@ function evaluate(lst) {
         }
     }
 
+    value = Math.round(value * 1000)/1000
     return `${value}`;
 }
-
-sample_input="0.2+2";
-console.log(evaluate(convert));
-//console.log(evaluate(sample_input));
