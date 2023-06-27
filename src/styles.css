@@ -15,13 +15,39 @@ body {
     margin: 0px;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center; 
 }
 
-div {
-    border: 1px solid black;
+.main {
+    width: 100%;
+    height: 100%;
+    
+    background-image: linear-gradient(
+    310deg,
+    hsl(0deg 0% 81%) 0%,
+    hsl(135deg 1% 82%) 11%,
+    hsl(135deg 1% 83%) 21%,
+    hsl(135deg 2% 84%) 30%,
+    hsl(135deg 3% 85%) 38%,
+    hsl(135deg 4% 86%) 46%,
+    hsl(135deg 5% 88%) 53%,
+    hsl(135deg 7% 89%) 60%,
+    hsl(135deg 9% 90%) 67%,
+    hsl(135deg 11% 91%) 73%,
+    hsl(135deg 14% 92%) 80%,
+    hsl(135deg 18% 93%) 86%,
+    hsl(135deg 23% 94%) 93%,
+    hsl(135deg 31% 95%) 100%
+    );
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 #calculator {
     height: 35rem;
@@ -29,6 +55,9 @@ div {
 
     display: flex;
     flex-direction: column;
+
+    border: 10px solid rgb(41, 41, 41);
+    border-radius: 5%;
 }
 
 .header {
@@ -36,6 +65,12 @@ div {
     
     display: flex;
     flex-direction: column;
+
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.header > div {
+    padding: 0px 10px 2px 0px;
 }
 
 .expression {
@@ -44,32 +79,87 @@ div {
     display: flex;
     align-items: end;
     justify-content: flex-end;
+    color:rgb(35, 35, 35);
 }
 
 .result {
-    flex: 5;
+    flex: 7;
 
     display: flex;
     align-items: end;
     justify-content: flex-end;
+    background-image: linear-gradient(
+    40deg,
+    hsl(122deg 51% 62%) 0%,
+    hsl(123deg 51% 64%) 11%,
+    hsl(124deg 51% 67%) 21%,
+    hsl(125deg 52% 69%) 30%,
+    hsl(126deg 52% 72%) 38%,
+    hsl(127deg 52% 74%) 46%,
+    hsl(128deg 52% 77%) 53%,
+    hsl(129deg 52% 79%) 60%,
+    hsl(130deg 51% 82%) 67%,
+    hsl(131deg 51% 85%) 73%,
+    hsl(132deg 49% 87%) 80%,
+    hsl(133deg 47% 90%) 86%,
+    hsl(134deg 42% 92%) 93%,
+    hsl(135deg 31% 95%) 100%
+    );
+    border-top: 5px solid rgb(41, 41, 41);
+    border-bottom: 5px solid rgb(41, 41, 41);
 }
 
 .buttons {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+
     flex: 7;
     display: flex;
     flex-direction: column;
+    
 }
 
 .buttons > div {
     flex: 1;
-
     display: flex;
 }
 
+
+#clear, #delete {
+    border-bottom: 5px solid rgb(41, 41, 41);
+}
+
+#clear {
+    border-right: 5px solid rgb(41, 41, 41);
+    background-color: rgb(252, 154, 140);
+    
+}
+
+#delete {
+    background-color: rgb(255, 251, 167);
+}
+
+
+
 .buttons > div > div {
     flex: 1;
-
+    border: 2px solid rgb(41, 41, 41);
+    background-color: rgb(227, 227, 227);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+}
+
+.buttons > div > div:hover {
+    background-color: rgb(108, 108, 108);
+    color:rgb(255, 255, 255);
+}
+
+#clear:hover {
+    background-color: rgb(127, 78, 70);
+}
+
+#delete:hover {
+    background-color: rgb(138, 136, 85);
 }
